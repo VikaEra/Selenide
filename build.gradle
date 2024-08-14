@@ -10,10 +10,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'com.codeborne:selenide:6.17.2'
 }
 
 test {
     useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
 }
